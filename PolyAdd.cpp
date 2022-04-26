@@ -98,21 +98,21 @@ queue<MulaData> PolyAdd::addFormula(queue<MulaData> formulaOne, queue<MulaData> 
 
 
 // 测试函数
-//int main() {
-//	queue<MulaData> formula_1;
-//	queue<MulaData> formula_2;
-//	queue<MulaData> resultFor;
-//	PolyAdd RunWay;
-//	cout << "建立第一个一元多项式，输入-1停止建立:\n" << endl;
-//	formula_1 = RunWay.setFormula();
-//	cout << "建立第二个一元多项式，输入-1停止建立:\n" << endl;
-//	formula_2 = RunWay.setFormula();
-//	cout << "建立结果为:\n" << endl;
-//	RunWay.showFormula(formula_1);
-//	RunWay.showFormula(formula_2);
-//	cout << "相加结果为:\n" << endl;
-//	resultFor = RunWay.addFormula(formula_1, formula_2);
-//	RunWay.showFormula(resultFor);
-//	return 0;
-//}
+int main() {
+	queue<MulaData> formula_1;
+	queue<MulaData> formula_2;
+	queue<MulaData> resultFor;
+	PolyAdd RunWay;
+	cout << "建立第一个一元多项式，输入-1停止建立:\n" << endl;
+	formula_1 = RunWay.setFormula();
+	cout << "建立第二个一元多项式，输入-1停止建立:\n" << endl;
+	formula_2 = RunWay.setFormula();
+	cout << "建立结果为:\n" << endl;
+	RunWay.showFormula(formula_1);
+	RunWay.showFormula(formula_2);
+	cout << "相加结果为:\n" << endl;
+	resultFor = RunWay.addFormula(formula_1, formula_2);
+	RunWay.showFormula(resultFor);
+	return 0;
+}
 
