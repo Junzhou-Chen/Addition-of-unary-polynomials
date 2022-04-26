@@ -1,6 +1,5 @@
 /************************************************************************************************************/
-/*****************************¸ø¶¨Á½¸öÒ»Ôª¶àÏîÊ½£¬ÊµÏÖÁ½¸öÒ»Ôª¶àÏîÊ½µÄÏà¼ÓËã·¨¡£*****************************/
-/**********************************³Â¿¡Öİ 2006040226 ÖÇÄÜ¿ÆÑ§Óë¼¼Êõ2°à***************************************/
+/*****************************ç»™å®šä¸¤ä¸ªä¸€å…ƒå¤šé¡¹å¼ï¼Œå®ç°ä¸¤ä¸ªä¸€å…ƒå¤šé¡¹å¼çš„ç›¸åŠ ç®—æ³•ã€‚******************************/
 /************************************************************************************************************/
 
 
@@ -8,23 +7,23 @@
 #include<queue>
 using namespace std;
 
-// Ò»Ôª¶àÏîÊ½½Úµã
-// ÓÉÓÚÊµÑé1ÒÑ¾­Ê¹ÓÃ¹ıÁ´±íµÄĞÎÊ½½øĞĞÊı×é´¦Àí£¬ÕâÀïÎÒÑ¡Ôñ¶ÓÁĞ½øĞĞÊı¾İ´¦Àí
+// ä¸€å…ƒå¤šé¡¹å¼èŠ‚ç‚¹
+// ç”±äºå®éªŒ1å·²ç»ä½¿ç”¨è¿‡é“¾è¡¨çš„å½¢å¼è¿›è¡Œæ•°ç»„å¤„ç†ï¼Œè¿™é‡Œæˆ‘é€‰æ‹©é˜Ÿåˆ—è¿›è¡Œæ•°æ®å¤„ç†
 struct MulaData
 {
 	double num_1;
 	int num_2;
 };
 
-// Ïà¹Ø·½·¨
+// ç›¸å…³æ–¹æ³•
 class PolyAdd {
 public:
-	queue<MulaData> setFormula();// ½¨Á¢Ò»Ôª¶àÏîÊ½
-	void showFormula(queue<MulaData> formula);// Êä³öÒ»Ôª¶àÏîÊ½
-	queue<MulaData> addFormula(queue<MulaData> formulaOne, queue<MulaData> formulaTwo);// Ò»Ôª¶àÏîÊ½Ïà¼Ó
+	queue<MulaData> setFormula();// å»ºç«‹ä¸€å…ƒå¤šé¡¹å¼
+	void showFormula(queue<MulaData> formula);// è¾“å‡ºä¸€å…ƒå¤šé¡¹å¼
+	queue<MulaData> addFormula(queue<MulaData> formulaOne, queue<MulaData> formulaTwo);// ä¸€å…ƒå¤šé¡¹å¼ç›¸åŠ 
 };
 
-// ½¨Á¢Ò»Ôª¶àÏîÊ½
+// å»ºç«‹ä¸€å…ƒå¤šé¡¹å¼
 queue<MulaData> PolyAdd::setFormula()
 {
 	queue<MulaData> formula;
@@ -36,11 +35,11 @@ queue<MulaData> PolyAdd::setFormula()
 		formula.push(Num_Get);
 		std::cin >> Num_Get.num_1;
 	}
-	cout << "´´½¨½áÊø" << endl;
+	cout << "åˆ›å»ºç»“æŸ" << endl;
 	return formula;
 }
 
-// Êä³öÒ»Ôª¶àÏîÊ½
+// è¾“å‡ºä¸€å…ƒå¤šé¡¹å¼
 void PolyAdd::showFormula(queue<MulaData> formula)
 {
 	MulaData showNum;
@@ -54,12 +53,12 @@ void PolyAdd::showFormula(queue<MulaData> formula)
 	cout << '\n';
 }
 
-// Ò»Ôª¶àÏîÊ½Ïà¼Ó
+// ä¸€å…ƒå¤šé¡¹å¼ç›¸åŠ 
 queue<MulaData> PolyAdd::addFormula(queue<MulaData> formulaOne, queue<MulaData> formulaTwo)
 {
 	MulaData Save_1, Save_2;
 	queue<MulaData> result_Res;
-	// µ±Á½Õß²»Îª¿Õ
+	// å½“ä¸¤è€…ä¸ä¸ºç©º
 	while ((!formulaOne.empty()) && (!formulaTwo.empty())) {
 		Save_1 = formulaOne.front(); 
 		Save_2 = formulaTwo.front();
@@ -78,7 +77,7 @@ queue<MulaData> PolyAdd::addFormula(queue<MulaData> formulaOne, queue<MulaData> 
 			formulaTwo.pop();
 		}
 	}
-	// ÆäÖĞÖ®Ò»Îª¿Õ
+	// å…¶ä¸­ä¹‹ä¸€ä¸ºç©º
 	if (formulaOne.empty()) {
 		while (!formulaTwo.empty()) {
 			result_Res.push(formulaTwo.front());
@@ -98,20 +97,20 @@ queue<MulaData> PolyAdd::addFormula(queue<MulaData> formulaOne, queue<MulaData> 
 
 
 
-// ²âÊÔº¯Êı
+// æµ‹è¯•å‡½æ•°
 //int main() {
 //	queue<MulaData> formula_1;
 //	queue<MulaData> formula_2;
 //	queue<MulaData> resultFor;
 //	PolyAdd RunWay;
-//	cout << "½¨Á¢µÚÒ»¸öÒ»Ôª¶àÏîÊ½£¬ÊäÈë-1Í£Ö¹½¨Á¢:\n" << endl;
+//	cout << "å»ºç«‹ç¬¬ä¸€ä¸ªä¸€å…ƒå¤šé¡¹å¼ï¼Œè¾“å…¥-1åœæ­¢å»ºç«‹:\n" << endl;
 //	formula_1 = RunWay.setFormula();
-//	cout << "½¨Á¢µÚ¶ş¸öÒ»Ôª¶àÏîÊ½£¬ÊäÈë-1Í£Ö¹½¨Á¢:\n" << endl;
+//	cout << "å»ºç«‹ç¬¬äºŒä¸ªä¸€å…ƒå¤šé¡¹å¼ï¼Œè¾“å…¥-1åœæ­¢å»ºç«‹:\n" << endl;
 //	formula_2 = RunWay.setFormula();
-//	cout << "½¨Á¢½á¹ûÎª:\n" << endl;
+//	cout << "å»ºç«‹ç»“æœä¸º:\n" << endl;
 //	RunWay.showFormula(formula_1);
 //	RunWay.showFormula(formula_2);
-//	cout << "Ïà¼Ó½á¹ûÎª:\n" << endl;
+//	cout << "ç›¸åŠ ç»“æœä¸º:\n" << endl;
 //	resultFor = RunWay.addFormula(formula_1, formula_2);
 //	RunWay.showFormula(resultFor);
 //	return 0;
